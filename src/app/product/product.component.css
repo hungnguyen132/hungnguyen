@@ -1,0 +1,111 @@
+a{
+  text-decoration: none;
+  list-style: none;
+}
+.img-new img {
+  height: 220px;
+  width: 100%;
+}
+
+.main-left .card {
+  width: 370px;
+}
+
+.main-left .card .card-body img {
+  width: 175px;
+  margin: auto;
+}
+
+.main-left {
+  float: left;
+  flex: 3;
+}
+
+.main-right {
+  float: right;
+}
+
+.main-left .text-center {
+  float: left;
+}
+
+.main-left .text-center {
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+.main-left .away{
+  margin-top: 600px;
+  text-align: center;
+
+}
+
+.main {
+  padding: 20px;
+  display: flex;
+}
+
+.text-center  .card .card-header {
+  text-align: center;
+}
+.text-center a{
+  color: black;text-decoration: none;
+}
+.text-center:hover{
+  opacity: 0.5;
+  transition: 0.3s;
+  box-shadow: 6px 5px 9px #757575;
+}
+/************************************************************************/
+.main-right .card-body{
+  flex: 0 !important;
+  padding: 0 !important;
+}
+.main-right{
+  width: 350px;
+}
+
+.main-left .away a i{
+  border: 1px solid darkgray;
+  border-radius: 100%;
+  font-size: 38px;
+  width: 42px;
+}
+.main-left .away a{
+  padding: 0 5px;
+}
+.main-left .away i:hover{
+  color: black;
+  transition: 0.3s;
+  box-shadow: 3px 2px 9px #757575;
+  opacity: 0.5;
+}
+.text-center .card-body{
+  height: 206px;
+
+}
+.main-right .card .list-group .list-group-item a{
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+/*********************************************************/
+.list-group-item{
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.list-group-item:hover, .list-group-item:focus, .list-group-item:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.list-group{
+  cursor: pointer;
+}

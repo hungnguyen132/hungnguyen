@@ -1,0 +1,111 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+<div class="header">
+  <div class="img-new">
+    <img
+      src="https://previews.123rf.com/images/arrow/arrow1603/arrow160300010/56404106-online-training-education-concept-banner.jpg">
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="#">MuaTC-Exam</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Liên hệ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Góp ý</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hỏi đáp</a>
+        </li>
+
+      </ul>
+      <div class="dropdown">
+        <a class=" dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">
+          Dropdown button
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+
+    </div>
+
+  </nav>
+</div>
+<div class="main">
+  <div class="main-left">
+    <div class="list-main" >
+      <div class="card text-center" *ngFor="let p of products | paginate: {itemsPerPage:4,currentPage:p}"
+           [class.list-main]="p===selectProduct"
+           (click)="Onselectproduct(p)">
+
+        <a [routerLink]="['/product-detail',p.id]">
+          <div class="card-body">
+            <img src="{{p.urlhinh}}">
+          </div>
+          <div class="card-header">
+            {{p.name}}
+          </div>
+        </a>
+
+      </div>
+    </div>
+    <div class="away">
+      <a (click)="nextpage()"><i class="fa fa-angle-double-up"></i></a>
+      <a (click)="prevout()"><i class="fa fa-angle-double-down"></i></a>
+      <a><i class="fa fa-angle-double-left"></i></a>
+      <a><i class="fa fa-angle-double-right"></i></a>
+    </div>
+
+  </div>
+
+
+  <div class="main-right">
+    <div class="card">
+      <div class="card-header">
+        <h3><i class="fa fa-list"> Danh Mục Môn Học</i></h3>
+      </div>
+      <ul class="list-group list-group-flush" *ngFor="let p of products"  [routerLink]="['/product-detail',p.id]">
+        <li class="list-group-item" [class.list-group]="p===selectProduct"
+            (click)="OnselectProduct(p)">
+          <a >{{p.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+</body>
+
+</html>
